@@ -39,9 +39,12 @@ namespace Gato
                 { button7, button8, button9 },
             };
 
-            foreach (Button button in Controls)
+            foreach (Control control in Controls)
             {
-                button.Click += button_Click;
+                if (control is Button)
+                {
+                    control.Click += button_Click;
+                }
             }
         }
 
